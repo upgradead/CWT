@@ -1,0 +1,186 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CWT",
+		"_postman_id": "186d34ba-c36c-a76c-53de-b186d70f1fe9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Convert",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine id=\"572\" index=\"1\" op=\"C\" elementId=\"PNR-572\">\r\n<TypeIndicator>TYPE-01</TypeIndicator>\r\n<FareApplication>ONE</FareApplication>\r\n<FormOfPaymentCode>FormOfPaymentCode0</FormOfPaymentCode>\r\n<LinkCode>01</LinkCode>\r\n<AccountingVendorCode>ABC</AccountingVendorCode>\r\n<ChargeCategoryCoded>TEST</ChargeCategoryCoded>\r\n<AirlineDesignator>AA</AirlineDesignator>\r\n<DocumentNumber>3889081143</DocumentNumber>\r\n<CommissionPercentage>2</CommissionPercentage>\r\n<CommissionAmount>2</CommissionAmount>\r\n<BaseFare>1252.90</BaseFare>\r\n<TaxPercentage>1</TaxPercentage>\r\n<TaxAmount>201.38</TaxAmount>\r\n<TaxSurchargeCode2>VAT</TaxSurchargeCode2>\r\n<GSTCode>GST</GSTCode>\r\n<GSTAmount>10</GSTAmount>\r\n<GSTPercent>1</GSTPercent>\r\n<QSTCode>QST</QSTCode>\r\n<QSTAmount>10</QSTAmount>\r\n<QSTPercent>1</QSTPercent>\r\n<CreditCardNumber>123456789</CreditCardNumber>\r\n<CreditCardCode>AX0</CreditCardCode>\r\n<PassengerName>Thanos</PassengerName>\r\n<NumberOfConjunctedDocuments>15-FEE-EXP$08</NumberOfConjunctedDocuments>\r\n<NumberOfCoupons>1</NumberOfCoupons>\r\n<OriginalTicketNumber>123456</OriginalTicketNumber>\r\n<OriginalDateOfIssue>2021-01-28</OriginalDateOfIssue>\r\n<OriginalPlaceOfIssue>MNL</OriginalPlaceOfIssue>\r\n<FullPartialExchangeIndicator>PART</FullPartialExchangeIndicator>\r\n<OriginalInvoice>00001</OriginalInvoice>\r\n<TarriffBasis>TarriffBasis0</TarriffBasis>\r\n<FreeFormText>HELLO WORLD</FreeFormText>\r\n<CurrencyCode>USD</CurrencyCode>\r\n<SegmentType>AIR</SegmentType>\r\n<SegmentNumber>1</SegmentNumber>\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Convert empty values",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine  op=\"C\" elementId=\"PNR-572\">\r\n<TypeIndicator></TypeIndicator>\r\n<FareApplication></FareApplication>\r\n<FormOfPaymentCode></FormOfPaymentCode>\r\n<LinkCode></LinkCode>\r\n<AccountingVendorCode></AccountingVendorCode>\r\n<ChargeCategoryCoded></ChargeCategoryCoded>\r\n<AirlineDesignator></AirlineDesignator>\r\n<DocumentNumber></DocumentNumber>\r\n<CommissionPercentage></CommissionPercentage>\r\n<CommissionAmount></CommissionAmount>\r\n<BaseFare></BaseFare>\r\n<TaxPercentage></TaxPercentage>\r\n<TaxAmount></TaxAmount>\r\n<TaxSurchargeCode2></TaxSurchargeCode2>\r\n<GSTCode></GSTCode>\r\n<GSTAmount></GSTAmount>\r\n<GSTPercent></GSTPercent>\r\n<QSTCode></QSTCode>\r\n<QSTAmount></QSTAmount>\r\n<QSTPercent></QSTPercent>\r\n<CreditCardNumber></CreditCardNumber>\r\n<CreditCardCode></CreditCardCode>\r\n<PassengerName></PassengerName>\r\n<NumberOfConjunctedDocuments></NumberOfConjunctedDocuments>\r\n<NumberOfCoupons></NumberOfCoupons>\r\n<OriginalTicketNumber></OriginalTicketNumber>\r\n<OriginalDateOfIssue></OriginalDateOfIssue>\r\n<OriginalPlaceOfIssue></OriginalPlaceOfIssue>\r\n<FullPartialExchangeIndicator></FullPartialExchangeIndicator>\r\n<OriginalInvoice></OriginalInvoice>\r\n<TarriffBasis></TarriffBasis>\r\n<FreeFormText></FreeFormText>\r\n<CurrencyCode></CurrencyCode>\r\n<SegmentType></SegmentType>\r\n<SegmentNumber></SegmentNumber>\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Convert no values",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine  op=\"C\" elementId=\"PNR-572\">\r\n\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Convert all strings",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine  op=\"C\" elementId=\"PNR-572\">\r\n<TypeIndicator>TEST</TypeIndicator>\r\n<FareApplication>TEST</FareApplication>\r\n<FormOfPaymentCode>TEST</FormOfPaymentCode>\r\n<LinkCode>TEST</LinkCode>\r\n<AccountingVendorCode>TEST</AccountingVendorCode>\r\n<ChargeCategoryCoded>TEST</ChargeCategoryCoded>\r\n<AirlineDesignator>TEST</AirlineDesignator>\r\n<DocumentNumber>TEST</DocumentNumber>\r\n<CommissionPercentage>TEST</CommissionPercentage>\r\n<CommissionAmount>TEST</CommissionAmount>\r\n<BaseFare>TEST</BaseFare>\r\n<TaxPercentage>TEST</TaxPercentage>\r\n<TaxAmount>TEST</TaxAmount>\r\n<TaxSurchargeCode2>TEST</TaxSurchargeCode2>\r\n<GSTCode>TEST</GSTCode>\r\n<GSTAmount>TEST</GSTAmount>\r\n<GSTPercent>TEST</GSTPercent>\r\n<QSTCode>TEST</QSTCode>\r\n<QSTAmount>TEST</QSTAmount>\r\n<QSTPercent>TEST</QSTPercent>\r\n<CreditCardNumber>TEST</CreditCardNumber>\r\n<CreditCardCode>TEST</CreditCardCode>\r\n<PassengerName>TEST</PassengerName>\r\n<NumberOfConjunctedDocuments>TEST</NumberOfConjunctedDocuments>\r\n<NumberOfCoupons>TEST</NumberOfCoupons>\r\n<OriginalTicketNumber>TEST</OriginalTicketNumber>\r\n<OriginalDateOfIssue>TEST</OriginalDateOfIssue>\r\n<OriginalPlaceOfIssue>TEST</OriginalPlaceOfIssue>\r\n<FullPartialExchangeIndicator>TEST</FullPartialExchangeIndicator>\r\n<OriginalInvoice>TEST</OriginalInvoice>\r\n<TarriffBasis>TEST</TarriffBasis>\r\n<FreeFormText>TEST</FreeFormText>\r\n<CurrencyCode>TEST</CurrencyCode>\r\n<SegmentType>TEST</SegmentType>\r\n<SegmentNumber>TEST</SegmentNumber>\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Convert all decimals",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine  op=\"C\" elementId=\"PNR-572\">\r\n<TypeIndicator>12.311</TypeIndicator>\r\n<FareApplication>12.311</FareApplication>\r\n<FormOfPaymentCode>12.311</FormOfPaymentCode>\r\n<LinkCode>12.311</LinkCode>\r\n<AccountingVendorCode>12.311</AccountingVendorCode>\r\n<ChargeCategoryCoded>12.311</ChargeCategoryCoded>\r\n<AirlineDesignator>12.311</AirlineDesignator>\r\n<DocumentNumber>12.311</DocumentNumber>\r\n<CommissionPercentage>12.311</CommissionPercentage>\r\n<CommissionAmount>12.311</CommissionAmount>\r\n<BaseFare>12.311</BaseFare>\r\n<TaxPercentage>12.311</TaxPercentage>\r\n<TaxAmount>12.311</TaxAmount>\r\n<TaxSurchargeCode2>12.311</TaxSurchargeCode2>\r\n<GSTCode>12.311</GSTCode>\r\n<GSTAmount>12.311</GSTAmount>\r\n<GSTPercent>12.311</GSTPercent>\r\n<QSTCode>12.311</QSTCode>\r\n<QSTAmount>12.311</QSTAmount>\r\n<QSTPercent>12.311</QSTPercent>\r\n<CreditCardNumber>12.311</CreditCardNumber>\r\n<CreditCardCode>12.311</CreditCardCode>\r\n<PassengerName>12.311</PassengerName>\r\n<NumberOfConjunctedDocuments>12.311</NumberOfConjunctedDocuments>\r\n<NumberOfCoupons>12.311</NumberOfCoupons>\r\n<OriginalTicketNumber>12.311</OriginalTicketNumber>\r\n<OriginalDateOfIssue>12.311</OriginalDateOfIssue>\r\n<OriginalPlaceOfIssue>12.311</OriginalPlaceOfIssue>\r\n<FullPartialExchangeIndicator>12.311</FullPartialExchangeIndicator>\r\n<OriginalInvoice>12.311</OriginalInvoice>\r\n<TarriffBasis>12.311</TarriffBasis>\r\n<FreeFormText>12.311</FreeFormText>\r\n<CurrencyCode>12.311</CurrencyCode>\r\n<SegmentType>12.311</SegmentType>\r\n<SegmentNumber>12.311</SegmentNumber>\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Convert all number",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine  op=\"C\" elementId=\"PNR-572\">\r\n<TypeIndicator>12</TypeIndicator>\r\n<FareApplication>12</FareApplication>\r\n<FormOfPaymentCode>12</FormOfPaymentCode>\r\n<LinkCode>12</LinkCode>\r\n<AccountingVendorCode>12</AccountingVendorCode>\r\n<ChargeCategoryCoded>12</ChargeCategoryCoded>\r\n<AirlineDesignator>12</AirlineDesignator>\r\n<DocumentNumber>12</DocumentNumber>\r\n<CommissionPercentage>12</CommissionPercentage>\r\n<CommissionAmount>12</CommissionAmount>\r\n<BaseFare>12</BaseFare>\r\n<TaxPercentage>12</TaxPercentage>\r\n<TaxAmount>12</TaxAmount>\r\n<TaxSurchargeCode2>12</TaxSurchargeCode2>\r\n<GSTCode>12</GSTCode>\r\n<GSTAmount>12</GSTAmount>\r\n<GSTPercent>12</GSTPercent>\r\n<QSTCode>12</QSTCode>\r\n<QSTAmount>12</QSTAmount>\r\n<QSTPercent>12</QSTPercent>\r\n<CreditCardNumber>12</CreditCardNumber>\r\n<CreditCardCode>12</CreditCardCode>\r\n<PassengerName>12</PassengerName>\r\n<NumberOfConjunctedDocuments>12</NumberOfConjunctedDocuments>\r\n<NumberOfCoupons>12</NumberOfCoupons>\r\n<OriginalTicketNumber>12</OriginalTicketNumber>\r\n<OriginalDateOfIssue>12</OriginalDateOfIssue>\r\n<OriginalPlaceOfIssue>12</OriginalPlaceOfIssue>\r\n<FullPartialExchangeIndicator>12</FullPartialExchangeIndicator>\r\n<OriginalInvoice>12</OriginalInvoice>\r\n<TarriffBasis>12</TarriffBasis>\r\n<FreeFormText>12</FreeFormText>\r\n<CurrencyCode>12</CurrencyCode>\r\n<SegmentType>12</SegmentType>\r\n<SegmentNumber>12</SegmentNumber>\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Convert all special character",
+			"request": {
+				"url": "http://localhost:8080/convert",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<AccountingLine index=\"2\" op=\"C\" elementId=\"PNR-572\">\r\n<TypeIndicator>12!@#$</TypeIndicator>\r\n<FareApplication>12!@#$</FareApplication>\r\n<FormOfPaymentCode>12!@#$</FormOfPaymentCode>\r\n<LinkCode>12!@#$</LinkCode>\r\n<AccountingVendorCode>12!@#$</AccountingVendorCode>\r\n<ChargeCategoryCoded>12!@#$</ChargeCategoryCoded>\r\n<AirlineDesignator>12!@#$</AirlineDesignator>\r\n<DocumentNumber>12!@#$</DocumentNumber>\r\n<CommissionPercentage>12!@#$</CommissionPercentage>\r\n<CommissionAmount>12!@#$</CommissionAmount>\r\n<BaseFare>12!@#$</BaseFare>\r\n<TaxPercentage>12!@#$</TaxPercentage>\r\n<TaxAmount>12!@#$</TaxAmount>\r\n<TaxSurchargeCode2>12!@#$</TaxSurchargeCode2>\r\n<GSTCode>12!@#$</GSTCode>\r\n<GSTAmount>12!@#$</GSTAmount>\r\n<GSTPercent>12!@#$</GSTPercent>\r\n<QSTCode>12!@#$</QSTCode>\r\n<QSTAmount>12!@#$</QSTAmount>\r\n<QSTPercent>12!@#$</QSTPercent>\r\n<CreditCardNumber>12!@#$</CreditCardNumber>\r\n<CreditCardCode>12!@#$</CreditCardCode>\r\n<PassengerName>12!@#$</PassengerName>\r\n<NumberOfConjunctedDocuments>12!@#$</NumberOfConjunctedDocuments>\r\n<NumberOfCoupons>12!@#$</NumberOfCoupons>\r\n<OriginalTicketNumber>12!@#$</OriginalTicketNumber>\r\n<OriginalDateOfIssue>12!@#$</OriginalDateOfIssue>\r\n<OriginalPlaceOfIssue>12!@#$</OriginalPlaceOfIssue>\r\n<FullPartialExchangeIndicator>12!@#$</FullPartialExchangeIndicator>\r\n<OriginalInvoice>12!@#$</OriginalInvoice>\r\n<TarriffBasis>12!@#$</TarriffBasis>\r\n<FreeFormText>12!@#$</FreeFormText>\r\n<CurrencyCode>12!@#$</CurrencyCode>\r\n<SegmentType>12!@#$</SegmentType>\r\n<SegmentNumber>12!@#$</SegmentNumber>\r\n</AccountingLine>\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
